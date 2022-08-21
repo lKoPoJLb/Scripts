@@ -1,0 +1,154 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local gui = Library:create{
+    Name = "Mad City 2",
+    Theme = Library.Themes.Dark,
+    Link = "https://github.com/lKoPoJLb/"
+}
+gui:Notification{
+    Title = "KoPoJLb Release",
+    Text = "Thanks for use this script!",
+    Duration = 5,
+    Callback = function() end
+}
+local tab1 = gui:tab{
+    Icon = "rbxassetid://6034996695",
+    Name = "General"
+}
+tab1:Slider{
+    Name = "Walk speed",
+    Default = 16,
+    Min = 0,
+    Max = 200,
+    Callback = function(v)
+        getgenv().WalkSpeedValue = v --set your desired walkspeed here
+        local Player = game:service'Players'.LocalPlayer
+        Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+            Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
+        end)
+        Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue
+    end
+}
+tab1:button{
+    Name = "Reset Character (Bypass Bug)",
+    Description = "Bypass Bug. On the second attempt to Rejoin",
+    Callback = function()
+        local chr = game.Players.LocalPlayer.Character.Humanoid
+        if chr.Health == 0 then
+            chr.Health = 100
+            wait(1)
+            chr.Health = 0
+            _G.Chrbug = true
+        else
+            chr.Health = 0
+        end
+        if _G.Chrbug then
+            local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+
+            module:Teleport(game.PlaceId)
+        end
+    end
+}
+tab1:Button{
+    Name = "ESP",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua"))()
+    end
+}
+tab1:Toggle{
+    Name = "Silent AIM",
+    Callback = function(value)
+        _G.Silentaim = value
+
+        if _G.Silentaim == true then
+            if not _G.Silentaimon then
+                getgenv().fov = 240 -- Field of View: The silent aim is only targetted at the target inside the fov's radius.
+                getgenv().bodypart = "Torso" -- Targetting: "Head", "Torso". For example: Using "Head" will only deal headshots.
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/Cesare0328/my-scripts/main/SAMCH2', true))()
+                _G.Silentaimon = true
+                print("test ON")
+            else
+                getgenv().fov = 240
+                print("test ON 2")
+            end
+        else
+            getgenv().fov = 0
+            print("test OFF")
+        end
+    end
+}
+
+tab1:Dropdown{
+    Name = "Body Part",
+    Description = "Targetting: Head, Torso.",
+    Items = {
+        "Head",
+        "Torso"
+    },
+    Callback = function(value)
+        getgenv().bodypart = value
+        print("Selected:", value)
+    end
+}
+tab1:Slider{
+    Name = "FOV Circle",
+    Default = 240,
+    Min = 0,
+    Max = 700,
+    Description = "Field of View: The silent aim is only targetted at the target inside the fov's radius.",
+    Callback = function(value)
+        getgenv().fov = value
+        print("FOV:", value)
+    end
+}
+local tab2 = gui:tab({
+    Name = "Server"
+})
+tab2:Button{
+    Name = "Rejoin to server",
+    Callback = function()
+        local service = game:GetService("TeleportService")
+        local player = game.Players.LocalPlayer
+        service:Teleport(game.PlaceId, player)
+    end
+}
+tab2:Button{
+    Name = "Join to next server",
+    Callback = function()
+        local x = {}
+        for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=limit=10")).data) do
+            if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+                x[#x + 1] = v.id
+            end
+        end
+        if #x > 0 then
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+        else 
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+            wait(2)
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+        end
+    end
+}
+tab2:Button{
+    Name = "ServerHOP",
+    Description = "Join to less player server",
+    Callback = function()
+        local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+
+        module:Teleport(game.PlaceId)
+    end
+}
+gui:Credit{
+    Name = "KoPoJLb",
+    Description = "Script Developer",
+    Discord = "KING | KoPoJLb#9232"
+}
+gui:Credit{
+    Name = "Cesare0328",
+    Description = "Silent AIM Developer   github.com/Cesare0328",
+    Discord = "iFregggg#0328"
+}
+gui:Credit{
+    Name = "ic3w0lf22",
+    Description = "ESP script Developer   github.com/ic3w0lf22"
+}

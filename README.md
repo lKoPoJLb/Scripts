@@ -11,4 +11,6 @@
 + _**And more**_
 
 # Script
-Script:
+*Hide/Show menu key = Delete*
+
+**Script:** loadstring(game:HttpGet("https://raw.githubusercontent.com/lKoPoJLb/Scripts/main/Loader.lua"))()

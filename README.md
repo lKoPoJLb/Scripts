@@ -11,6 +11,12 @@
 + _**And more**_
 
 # Script
+**Supported executors:**
++ [KRNL](https://wearedevs.net/dinfo/Krnl)
++ [Fluxus](https://wearedevs.net/d/Fluxus)
++ [Comet](https://wearedevs.net/d/Comet)
+
+
 *Hide/Show menu key = Delete*
 
 **Script:** loadstring(game:HttpGet("https://raw.githubusercontent.com/lKoPoJLb/Scripts/main/Loader.lua"))()

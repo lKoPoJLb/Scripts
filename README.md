@@ -1,5 +1,5 @@
 # Mad City: Chapter 2 script GUI.
-![Screenshot_38](https://user-images.githubusercontent.com/90978052/189723988-682719a0-d922-4169-ad7e-8adecf285220.png)
+![image](https://user-images.githubusercontent.com/90978052/198890692-edfecf57-f0b1-4531-92ce-b6a65081ee60.png)
 
 # *Features*
 + **BEST TELEPORTS**

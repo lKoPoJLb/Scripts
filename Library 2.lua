@@ -453,7 +453,7 @@ function Library:AddWindow(options)
 
 	-- Functions
 
-	local function saveConfig(filePath)
+	function saveConfig(filePath)
 		local config = { Flags = {}, Binds = {}, Sliders = {}, Pickers = {} }
 	
 		for _, tab in next, Window.Tabs do
@@ -496,7 +496,7 @@ function Library:AddWindow(options)
 		writefile(filePath, HS:JSONEncode(config))
 	end
 	
-	local function loadConfig(filePath)
+	function loadConfig(filePath)
 		local s, config = pcall(function()
 			return HS:JSONDecode(readfile(filePath))
 		end)

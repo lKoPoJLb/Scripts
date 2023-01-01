@@ -315,7 +315,7 @@ function Library:AddWindow(options)
 		Name = "Window",
 		BackgroundTransparency = 1,
 		Size = UDim2.new(0, 460, 0, 497),
-		Position = UDim2.new(1, -490, 1, -527),
+		Position = UDim2.new(0, 140, 0, 140),
 		Visible = options.default ~= false,
 
 		SelfModules.UI.Create("Frame", {

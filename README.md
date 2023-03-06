@@ -23,4 +23,4 @@
 
 *Hide/Show menu key = Delete*
 
-**Script:** loadstring(game:HttpGet("https://raw.githubusercontent.com/lKoPoJLb/Scripts/main/Loader.lua"))()
+**Script:** ``loadstring(game:HttpGet("https://raw.githubusercontent.com/lKoPoJLb/Scripts/main/Loader.lua"))()``

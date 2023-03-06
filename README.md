@@ -18,7 +18,7 @@
 # Script
 **Supported executors:**
 + [KRNL](https://wearedevs.net/dinfo/Krnl)
-+ [Synapse X]([https://wearedevs.net/d/Fluxus](https://x.synapse.to/))
++ [Synapse X](https://x.synapse.to/)
 
 
 *Hide/Show menu key = Delete*

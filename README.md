@@ -1,10 +1,14 @@
 # Mad City: Chapter 2 script GUI.
-![image](https://user-images.githubusercontent.com/90978052/198890692-edfecf57-f0b1-4531-92ce-b6a65081ee60.png)
+![bandicam 2023-03-06 23-03-03-096](https://user-images.githubusercontent.com/90978052/223180061-b2d064f4-b443-492d-a22c-ec4d029322f2.jpg)
+
 
 # *Features*
 + **BEST TELEPORTS**
 + **Work BEST Walkspeed**
 + **Infinity jumps**
++ **NO E WAIT**
++ **Player list**
++ **Teleport to players**
 + **Bypass bug**
 + **Silent AIM**
 + **ESP visuals**

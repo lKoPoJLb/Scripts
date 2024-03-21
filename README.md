@@ -1,4 +1,4 @@
-# Mad City: Chapter 2 script GUI.
+# --Mad City: Chapter 2 script GUI.--
 ![bandicam 2023-03-06 23-03-03-096](https://user-images.githubusercontent.com/90978052/223180061-b2d064f4-b443-492d-a22c-ec4d029322f2.jpg)
 
 
